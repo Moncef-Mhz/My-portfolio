@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fff;
+  --foreground: #111;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #111;
+    --foreground: #fff;
   }
 }
 
@@ -18,4 +18,42 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px var(--foreground);
+  /* Stroke width and color */
+  color: transparent;
+  /* Makes the inner text color invisible */
+}
+
+.text-stroke-black {
+  -webkit-text-stroke: 1px var(--background);
+  /* Stroke width and color */
+  color: transparent;
+  /* Makes the inner text color invisible */
+}
+
+/* Custom Selection Styling */
+.text-stroke::selection,
+.text-stroke-black::selection {
+  color: var(--foreground);
+  /* Keep text fill hidden */
+  -webkit-text-stroke: 1px var(--foreground);
+  /* Maintain stroke during selection */
+}
+
+.child:nth-of-type(1) {
+  top: -45%;
+}
+.child:nth-of-type(2) {
+  top: -95%;
+}
+.child:nth-of-type(3) {
+  top: -45%;
+}
+.child:nth-of-type(4) {
+  top: -75%;
 }
