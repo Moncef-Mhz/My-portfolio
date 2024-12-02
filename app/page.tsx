@@ -1,6 +1,7 @@
 "use client";
 import Hero from "@/components/global/Hero";
 import Parallax from "@/components/global/Parallax";
+import Projects from "@/components/global/Projects";
 import { VelocityText } from "@/components/global/VelocityText";
 import useLenis from "@/hook/useLenis";
 
@@ -11,6 +12,7 @@ const HomePage = () => {
       <Hero />
       <Parallax />
       <VelocityText />
+      <Projects />
     </main>
   );
 };

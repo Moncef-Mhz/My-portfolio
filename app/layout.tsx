@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/global/Navbar";
+import { LayoutGroup } from "motion/react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter}  antialiased`}>
         <Header />
-        {children}
+        <LayoutGroup>{children}</LayoutGroup>
       </body>
     </html>
   );

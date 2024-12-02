@@ -6,8 +6,8 @@ export const navlinks = [
     href: "#hero",
   },
   {
-    name: "Work",
-    href: "#services",
+    name: "Projects",
+    href: "#projects",
   },
   {
     name: "About",
@@ -37,11 +37,45 @@ export const socialLinks = [
   },
 ];
 
-export const work = [
+export const Works = [
   {
     id: "1",
-    title: "Project Title",
+    slug: "ecommerce-app",
+    title: "Ecommerce App",
+    tools: ["UI/UX design"],
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "https://example.com/image1.jpg",
+    image: "/images/1/2.png",
+  },
+  {
+    id: "2",
+    slug: "task-management-app",
+    title: "Task Management App",
+    tools: ["UI/UX design"],
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    image: "/images/2/1.png",
+  },
+  {
+    id: "3",
+    slug: "lumevo",
+    title: "Lumevo",
+    tools: ["UI/UX design", "-", "Web Development"],
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    image: "/images/3/1.png",
+  },
+  {
+    id: "4",
+    slug: "portfolio",
+    title: "Portfolio",
+    tools: ["Web Development"],
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    image: "/images/4/2.png",
+  },
+  {
+    id: "5",
+    slug: "vsltranslator",
+    title: "VslTranslator",
+    tools: ["UI/UX design", "-", "Web Development"],
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    image: "/images/6/1.png",
   },
 ];

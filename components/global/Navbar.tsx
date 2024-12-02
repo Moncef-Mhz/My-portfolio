@@ -7,20 +7,19 @@ import Burger from "../ui/Burger";
 const Header = () => {
   const [isSticky, setIsSticky] = useState(true);
 
-  // Function to handle the scroll event
   const handleScroll = () => {
-    if (window.scrollY >= 0) {
-      setIsSticky(true); // Change the state when user scrolls down 50px
+    if (window.scrollY > 25) {
+      setIsSticky(true);
     } else {
-      setIsSticky(false); // Reset the state when scrolling back up
+      setIsSticky(false);
     }
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll); // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll); // Cleanup on unmount
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -29,7 +28,7 @@ const Header = () => {
       className="relative md:h-[100px] h-[80px] bg-background flex items-center justify-between px-4 md:px-[72px] transition-all duration-300"
       initial={{ y: -120 }}
       animate={{
-        y: isSticky ? 0 : -120, // Move the header up when sticky
+        y: isSticky ? 0 : -120,
       }}
       transition={{
         type: "spring",
@@ -37,7 +36,7 @@ const Header = () => {
         damping: 30,
       }}
       style={{
-        position: isSticky ? "fixed" : "absolute", // Fix the position when sticky
+        position: isSticky ? "fixed" : "absolute",
         top: isSticky ? 0 : "unset",
         left: 0,
         right: 0,
