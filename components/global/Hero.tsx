@@ -35,7 +35,7 @@ const Hero = () => {
         Hey, I am moncef meharzi
       </motion.h1>
       <div className="relative">
-        <h1 className="xl:text-9xl text-4xl md:text-6xl lg:text-8xl text-center font-black uppercase flex items-center justify-center flex-col gap-1">
+        <h1 className="2xl:text-9xl text-4xl md:text-6xl lg:text-8xl text-center font-black uppercase flex items-center justify-center flex-col gap-1">
           <Reaveal className="">
             <>
               Web Developer
@@ -56,7 +56,7 @@ const Hero = () => {
           that deliver.
         </p>
       </Reaveal>
-      <div className="absolute bottom-0 mb-24">
+      <div className="absolute bottom-0  mb-24">
         <Magnet>
           <SmoothScrollLink
             targetId="me"

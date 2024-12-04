@@ -13,7 +13,7 @@ const Column = ({ images, y }: Props) => {
       {images.map((image, i) => (
         <div
           key={i}
-          className="h-full w-full relative rounded-xl overflow-hidden"
+          className="h-full w-full relative rounded-md overflow-hidden"
         >
           <Image
             src={image}

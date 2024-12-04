@@ -48,12 +48,19 @@ body {
 .child:nth-of-type(1) {
   top: -45%;
 }
+
 .child:nth-of-type(2) {
   top: -95%;
 }
+
 .child:nth-of-type(3) {
   top: -45%;
 }
+
 .child:nth-of-type(4) {
   top: -75%;
+}
+
+.filter-green {
+  filter: brightness(10%) contrast(70%);
 }

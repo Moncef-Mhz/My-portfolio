@@ -40,7 +40,7 @@ const Projects = () => {
         id="projects"
         className="h-screen md:px-[72px] px-[16px] w-full flex items-center justify-center gap-6 duration-150"
       >
-        <div className="w-full xl:block hidden aspect-square h-[700px] relative overflow-hidden">
+        <div className="w-full xl:block hidden aspect-square  h-[600px] 2xl:h-[700px] relative overflow-hidden">
           <AnimatePresence mode="wait">
             <motion.div
               key={selectedIndex}
@@ -76,11 +76,11 @@ const Projects = () => {
           initial="initial"
           animate={mainControls}
           transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-          className="w-full flex flex-col items-start justify-between h-full max-h-[700px]"
+          className="w-full flex flex-col items-start justify-between  h-[600px] 2xl:h-[700px]"
         >
           <div className="flex items-center justify-between w-full border-b pb-4">
             <Reaveal>
-              <h1 className="text-6xl font-black text-stroke uppercase">
+              <h1 className="2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-black text-stroke uppercase">
                 Projects
               </h1>
             </Reaveal>
@@ -93,16 +93,16 @@ const Projects = () => {
               className="py-10 border-b group cursor-pointer w-full flex items-center justify-between"
             >
               <Reaveal>
-                <h1 className="text-3xl group-hover:text-slate-200/70 group-hover:-translate-x-2 px-2 duration-150">
+                <h1 className=" xl:text-2xl md:text-xl text-lg  group-hover:text-slate-200/70 group-hover:-translate-x-2 px-2 duration-150">
                   {work.title}
                 </h1>
               </Reaveal>
 
-              <div className="uppercase gap-2 flex items-center justify-center px-2">
+              <div className=" gap-2 capitalize flex items-center justify-center px-2">
                 {work.tools.map((item) => (
                   <h1
                     key={item}
-                    className="text-base group-hover:text-slate-200/70 group-hover:translate-x-2 duration-150"
+                    className=" md:text-base text-sm group-hover:text-slate-200/70 group-hover:translate-x-2 duration-150"
                   >
                     {item}
                   </h1>
