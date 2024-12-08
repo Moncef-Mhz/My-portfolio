@@ -87,6 +87,7 @@ const AnimatedBurger = () => {
                     ease: "easeOut",
                     delay: i * 0.1,
                   }}
+                  onClick={() => setIsOpen(false)}
                 >
                   <FlipLink href={nav.href}>{nav.name}</FlipLink>
                 </motion.div>

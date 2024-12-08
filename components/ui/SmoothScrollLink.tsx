@@ -25,7 +25,7 @@ const SmoothScrollLink = ({ targetId, children, className }: Props) => {
       onClick={handleClick}
       className={className}
       whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }} 
+      whileTap={{ scale: 0.95 }}
       transition={{ duration: 0.2 }}
     >
       {children}

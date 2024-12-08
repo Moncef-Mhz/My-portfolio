@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -11,12 +12,25 @@ export const FlipLink = ({
   children: string;
   href: string;
 }) => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const targetId = href.startsWith("#") ? href.slice(1) : href;
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <motion.a
       initial="initial"
+      href={`#${href}`}
       whileHover="hovered"
-      href={href}
-      className="relative block overflow-hidden whitespace-nowrap text-5xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
+      onClick={handleClick}
+      className="relative block cursor-pointer overflow-hidden whitespace-nowrap text-5xl font-black uppercase sm:text-7xl md:text-8xl lg:text-9xl"
       style={{
         lineHeight: 0.85,
       }}
@@ -44,6 +58,7 @@ export const FlipLink = ({
           </motion.span>
         ))}
       </div>
+
       <div className="absolute inset-0">
         {children.split("").map((l, i) => (
           <motion.span

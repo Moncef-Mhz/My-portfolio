@@ -59,7 +59,7 @@ const Hero = () => {
       <div className="absolute bottom-0  mb-24">
         <Magnet>
           <SmoothScrollLink
-            targetId="me"
+            targetId="parallax"
             className="border border-foreground rounded-full h-16 w-16 flex items-center justify-center cursor-pointer"
           >
             <ArrowDown strokeWidth={1} size={40} />

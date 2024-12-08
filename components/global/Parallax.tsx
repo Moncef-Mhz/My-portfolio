@@ -36,7 +36,14 @@ const Parallax = () => {
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
 
   return (
-    <div className="">
+    <div className="relative" id="parallax">
+      {/* <InfiniteMove
+        direction="right"
+        speed="fast"
+        items={Skills}
+        rotate="rotate-0"
+        className="absolute top-1"
+      /> */}
       <div
         ref={gallery}
         className="h-[175vh] bg-background relative flex gap-6 p-6 overflow-hidden box-border"

@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type Props = {
   items: { id: string; svg: string; name: string }[];
@@ -20,32 +20,11 @@ const InfiniteMove = ({
   rotate = "rotate-0",
 }: //   className,
 Props) => {
+  const [start, setStart] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const scrollerRef = useRef<HTMLUListElement>(null);
 
-  useEffect(() => {
-    addAnimation();
-  }, [addAnimation]);
-
-  const [start, setStart] = useState(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps 
-  function addAnimation() {
-    if (containerRef.current && scrollerRef.current) {
-      const scrollerContent = Array.from(scrollerRef.current.children);
-
-      scrollerContent.forEach((item) => {
-        const duplicatedItem = item.cloneNode(true);
-        if (scrollerRef.current) {
-          scrollerRef.current.appendChild(duplicatedItem);
-        }
-      });
-      getDirection();
-      getSpeed();
-      setStart(true);
-    }
-  }
-
-  const getDirection = () => {
+  const getDirection = useCallback(() => {
     if (containerRef.current) {
       if (direction === "left") {
         containerRef.current.style.setProperty(
@@ -59,9 +38,9 @@ Props) => {
         );
       }
     }
-  };
+  }, [direction]);
 
-  const getSpeed = () => {
+  const getSpeed = useCallback(() => {
     if (containerRef.current) {
       if (speed === "fast") {
         containerRef.current.style.setProperty("--animation-duration", "20s");
@@ -71,20 +50,41 @@ Props) => {
         containerRef.current.style.setProperty("--animation-duration", "80s");
       }
     }
-  };
+  }, [speed]);
+
+  const addAnimation = useCallback(() => {
+    if (containerRef.current && scrollerRef.current) {
+      const scrollerContent = Array.from(scrollerRef.current.children);
+
+      scrollerContent.forEach((item) => {
+        const duplicatedItem = item.cloneNode(true);
+        if (scrollerRef.current) {
+          scrollerRef.current.appendChild(duplicatedItem);
+        }
+      });
+
+      getDirection();
+      getSpeed();
+      setStart(true);
+    }
+  }, [getDirection, getSpeed]);
+
+  useEffect(() => {
+    addAnimation();
+  }, [addAnimation]);
 
   return (
     <div
       ref={containerRef}
       className={cn(
-        " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap ",
+        " flex w-full shrink-0 gap-4 py-2 bg-foreground border-2 border-background flex-nowrap ",
         rotate
       )}
     >
       <ul
         ref={scrollerRef}
         className={cn(
-          " flex min-w-full shrink-0 gap-4 py-4 w-max flex-nowrap bg-foreground border-y-4 items-center justify-center border-background",
+          " flex w-full shrink-0 gap-4 py-4 flex-nowrap   items-center justify-center",
           start && "animate-scroll ",
           pauseOnHover && "hover:[animation-play-state:paused]"
         )}

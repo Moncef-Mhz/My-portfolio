@@ -5,6 +5,7 @@ import { motion, useAnimation, useInView } from "motion/react";
 import { useEffect, useRef } from "react";
 import Reaveal from "../ui/Reaveal";
 import { CornerRightDown } from "lucide-react";
+
 const Works = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
@@ -19,7 +20,8 @@ const Works = () => {
   return (
     <div
       ref={ref}
-      className="w-full h-full bg-background  py-20 md:px-0 px-4 max-w-7xl items-center mx-auto space-y-6"
+      id="projects"
+      className="w-full h-full bg-background xl:px-0 py-20  px-4 max-w-7xl items-center mx-auto space-y-6"
     >
       <div className="flex items-center justify-between w-full border-b pb-4 ">
         <Reaveal>
@@ -40,17 +42,24 @@ const Works = () => {
             animate={mainControls}
             transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 * i }}
             key={project.id}
-            className="w-full p-4 border relative cursor-pointer group duration-150 z-0 overflow-hidden border-[#333]/50 rounded-2xl"
+            className="w-full  border relative cursor-pointer group duration-150 z-0 overflow-hidden border-[#333]/50 rounded-2xl"
           >
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={800}
-              height={800}
-              loading="lazy"
-              className="rounded-xl md:h-[400px] lg:h-[500px] h-[300px] z-10 object-cover"
-            />
-            <div className="px-2 py-4 space-y-3 z-10">
+            <div className="flex items-center justify-start  gap-2 pt-3 pb-2 px-4">
+              <div className="w-3 h-3 bg-zinc-700 rounded-full"></div>
+              <div className="w-3 h-3 bg-zinc-700 rounded-full"></div>
+              <div className="w-3 h-3 bg-zinc-700 rounded-full"></div>
+            </div>
+            <motion.div className="md:h-[400px] my-1  mx-2 rounded-xl lg:h-[500px] h-[300px] z-10 overflow-hidden">
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={800}
+                height={800}
+                loading="lazy"
+                className=" group-hover:scale-105 duration-150 w-full h-full  object-cover"
+              />
+            </motion.div>
+            <div className="p-4 px-4 space-y-3 z-10">
               <Reaveal>
                 <h3 className="md:text-2xl text-xl font-bold capitalize ">
                   {project.title}
