@@ -5,8 +5,9 @@ import Header from "@/components/global/Navbar";
 import { LayoutGroup } from "motion/react";
 
 const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
+  // subsets: ["latin"],
+  // display: "swap",
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {

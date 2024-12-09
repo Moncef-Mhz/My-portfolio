@@ -2,7 +2,18 @@
 
 import { Badge, Flag, User } from "lucide-react";
 import Image from "next/image";
-import { motion } from "motion/react";
+import Counter from "../ui/Counter";
+import Reaveal from "../ui/Reaveal";
+import Button from "../ui/Button";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import { cn } from "@/lib/utils";
+// import { motion } from "motion/react";
+
+const inter = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
 
 const info = [
   {
@@ -77,30 +88,37 @@ const About = () => {
   );
 
   return (
-    <div className="h-[120vh] w-full max-w-7xl mx-auto  py-20  flex items-center justify-center">
-      <div className="grid md:grid-cols-3 md:grid-rows-3 grid-cols-1 gap-4 w-full h-full ">
+    <div
+      className={cn(
+        "h-[120vh] px-4 xl:px-0 w-full max-w-7xl mx-auto py-20  flex items-center justify-center ",
+        inter.className
+      )}
+    >
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full h-full">
         {info.map((item) => (
           <div
             key={item.title}
-            className="bg-zinc-800 overflow-hidden group w-full h-full col-span-1 rounded-xl flex items-center justify-center relative"
+            className="bg-zinc-800 min-h-[300px] overflow-hidden group w-full h-full col-span-1 rounded-xl flex items-center justify-center relative"
           >
             <h1 className="text-8xl z-[1] group-hover:to-zinc-600 duration-150 font-bold bg-gradient-to-b from-foreground inline-block text-transparent bg-clip-text to-zinc-900 ">
-              {item.num}
+              <Counter num={item.num} duration="1" />
               <span className="text-indigo-500 font-normal">+</span>
             </h1>
             <div className="absolute z-[1] py-8 px-4 bottom-0 flex flex-col gap-2 left-0">
               <div className="text-indigo-500 fill-indigo-500 opacity-0 group-hover:opacity-100 translate-y-2 group-hover:-translate-y-2 duration-150">
                 {item.icon}
               </div>
-              <h1 className="text-lg font-semibold uppercase group-hover:-translate-y-2 duration-150">
-                {item.title}
-              </h1>
+              <Reaveal>
+                <h1 className="text-lg z-10  font-black uppercase group-hover:-translate-y-2 duration-150">
+                  {item.title}
+                </h1>
+              </Reaveal>
             </div>
 
             {roundoutline}
           </div>
         ))}
-        <div className="bg-zinc-800 w-full h-full col-span-1 group rounded-xl overflow-hidden relative flex items-center justify-center">
+        <div className="bg-zinc-800  w-full h-full min-h-[300px] col-span-1 group rounded-xl overflow-hidden relative flex items-center justify-center">
           <div className="w-28 h-28  rounded-full overflow-hidden">
             <Image
               src="/images/final.png"
@@ -113,13 +131,71 @@ const About = () => {
           </div>
           {roundoutline}
         </div>
-        <div className="bg-zinc-800 w-full h-full col-span-2 row-span-2 rounded-xl relative"></div>
-        <div className="bg-zinc-800 w-full h-full col-span-1 group rounded-xl  overflow-hidden relative flex items-center justify-center">
-          <h1 className="text-2xl font-semibold uppercase absolute top-0 py-8">
-            loved Stack
-          </h1>
+        <div className="bg-zinc-800 py-8 px-6 flex flex-col gap-y-4 w-full h-full col-span-1 sm:col-span-2 md:col-span-2 row-span-2 rounded-xl relative">
+          {/* <Reaveal>
+            <h1 className="text-xl font-semibold uppercase">About me</h1>
+          </Reaveal> */}
+          <p className="text-base text-white/80">
+            👋 Hi there! I’m Moncef Meharzi, an 18-year-old web developer and
+            UI/UX designer with 4+ years of experience crafting beautiful and
+            functional digital solutions.
+          </p>
+          <div className="space-y-3">
+            <h3 className="text-base text-white font-semibold">
+              🔧 My Expertise:
+            </h3>
+            <ul className="list-disc ml-5 space-y-2">
+              <li>
+                Full-stack development with <strong> Next.js</strong>,{" "}
+                <strong> React</strong>, and <strong> Node.js</strong>
+              </li>
+              <li>
+                Designing seamless user experiences with <strong>Figma</strong>{" "}
+              </li>
+              <li>
+                Styling with <strong>Tailwind CSS</strong>
+              </li>
+            </ul>
+          </div>
+          <div className="space-y-3">
+            <h3 className="text-base text-white font-semibold">
+              💡 What Drives Me:
+            </h3>
+            <p>
+              I’m passionate about turning complex ideas into simple, intuitive
+              designs and efficient code.
+            </p>
+          </div>
+          <div className="space-y-3">
+            <h3 className="text-base text-white font-semibold">
+              ⚽ Beyond Work:
+            </h3>
+            <p>
+              When I’m not building or designing, you’ll find me playing
+              football, gaming, or hitting the gym.
+            </p>
+          </div>
+          <div className="space-y-3">
+            <h3 className="text-base text-white font-semibold">
+              ✨ Let’s Collaborate!
+            </h3>
+            <p>
+              If you’re looking for someone to bring your ideas to life, feel
+              free to reach out.
+            </p>
+          </div>
+          <div className="w-full flex h-full items-center justify-center">
+            <Button>Let&apos;s Collaborate</Button>
+          </div>
+        </div>
+        <div className="bg-zinc-800  group w-full h-full min-h-[300px] col-span-1 group rounded-xl  overflow-hidden relative flex items-center justify-center">
+          <div className="absolute top-0 py-8">
+            <Reaveal>
+              <h1 className="text-xl font-black uppercase ">loved Stack</h1>
+            </Reaveal>
+          </div>
           <div className="space-y-4">
-            <ul className="flex gap-4 relative shrink-0 MyGradient">
+            <ul className="flex gap-4 group-hover:translate-x-3  duration-150 relative shrink-0 MyGradient">
               {Stack.slice(0, 4).map(({ id, name }) => (
                 <li
                   key={id}
@@ -129,11 +205,11 @@ const About = () => {
                 </li>
               ))}
             </ul>
-            <ul className="flex gap-4 relative shrink-0 MyGradient">
+            <ul className="flex gap-4 relative group-hover:-translate-x-3 translate-x-1 duration-150 shrink-0 MyGradient">
               {Stack.slice(4, 8).map(({ id, name }) => (
                 <li
                   key={id}
-                  className="border w-max translate-x-4  rounded-md bg-zinc-900 text-white/70 border-white/70 py-2 px-4"
+                  className="border w-max   rounded-md bg-zinc-900 text-white/70 border-white/70 py-2 px-4"
                 >
                   {name}
                 </li>

@@ -37,7 +37,7 @@ const Reaveal = ({ children, width = "fit", className }: props) => {
         }}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration: 0.5, delay: 0.3 }}
+        transition={{ duration: 0.5, delay: 0.3, once: true }}
         className={className}
       >
         {children}

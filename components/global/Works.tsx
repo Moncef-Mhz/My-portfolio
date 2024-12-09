@@ -5,6 +5,14 @@ import { motion, useAnimation, useInView } from "motion/react";
 import { useEffect, useRef } from "react";
 import Reaveal from "../ui/Reaveal";
 import { CornerRightDown } from "lucide-react";
+import { Plus_Jakarta_Sans } from "next/font/google";
+import { cn } from "@/lib/utils";
+
+const Jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
 
 const Works = () => {
   const ref = useRef(null);
@@ -21,7 +29,9 @@ const Works = () => {
     <div
       ref={ref}
       id="projects"
-      className="w-full h-full bg-background xl:px-0 py-20  px-4 max-w-7xl items-center mx-auto space-y-6"
+      className={
+        "w-full h-full bg-background xl:px-0 py-20  px-4 max-w-7xl items-center mx-auto space-y-6"
+      }
     >
       <div className="flex items-center justify-between w-full border-b pb-4 ">
         <Reaveal>
@@ -31,7 +41,12 @@ const Works = () => {
         </Reaveal>
         <CornerRightDown strokeWidth={1} size={40} />
       </div>
-      <div className="grid  md:grid-cols-2 grid-cols-1 gap-6">
+      <div
+        className={cn(
+          Jakarta.className,
+          "grid  md:grid-cols-2 grid-cols-1 gap-6"
+        )}
+      >
         {projects.map((project, i) => (
           <motion.div
             variants={{
