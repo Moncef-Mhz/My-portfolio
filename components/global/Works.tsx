@@ -30,7 +30,7 @@ const Works = () => {
       ref={ref}
       id="projects"
       className={
-        "w-full h-full bg-background xl:px-0 py-20  px-4 max-w-7xl items-center mx-auto space-y-6"
+        "w-full h-full bg-background xl:px-0 py-10  px-4 max-w-7xl items-center mx-auto space-y-6"
       }
     >
       <div className="flex items-center justify-between w-full border-b pb-4 ">

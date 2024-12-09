@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge, Flag, User } from "lucide-react";
+import { Badge, CornerRightDown, Flag, User } from "lucide-react";
 import Image from "next/image";
 import Counter from "../ui/Counter";
 import Reaveal from "../ui/Reaveal";
@@ -89,12 +89,24 @@ const About = () => {
 
   return (
     <div
-      className={cn(
-        "h-[120vh] px-4 xl:px-0 w-full max-w-7xl mx-auto py-20  flex items-center justify-center ",
-        inter.className
-      )}
+      className={
+        "h-[120vh] px-4 xl:px-0 w-full max-w-7xl mx-auto py-10 m  space-y-6 "
+      }
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full h-full">
+      <div className="flex items-center justify-between w-full border-b border-foreground/60 pb-4 ">
+        <Reaveal>
+          <h1 className="2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-black text-stroke uppercase">
+            About Me
+          </h1>
+        </Reaveal>
+        <CornerRightDown strokeWidth={1} size={40} />
+      </div>
+      <div
+        className={cn(
+          inter.className,
+          "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full h-full"
+        )}
+      >
         {info.map((item) => (
           <div
             key={item.title}
@@ -132,9 +144,6 @@ const About = () => {
           {roundoutline}
         </div>
         <div className="bg-zinc-800 py-8 px-6 flex flex-col gap-y-4 w-full h-full col-span-1 sm:col-span-2 md:col-span-2 row-span-2 rounded-xl relative">
-          {/* <Reaveal>
-            <h1 className="text-xl font-semibold uppercase">About me</h1>
-          </Reaveal> */}
           <p className="text-base text-white/80">
             👋 Hi there! I’m Moncef Meharzi, an 18-year-old web developer and
             UI/UX designer with 4+ years of experience crafting beautiful and
