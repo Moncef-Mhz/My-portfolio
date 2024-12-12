@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge, CornerRightDown, Flag, User } from "lucide-react";
+import { Badge, Flag, User } from "lucide-react";
 import Image from "next/image";
 import Counter from "../ui/Counter";
 import Reaveal from "../ui/Reaveal";
@@ -8,6 +8,7 @@ import Button from "../ui/Button";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import Head from "../ui/Head";
 
 const inter = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -130,17 +131,11 @@ const About = () => {
   return (
     <div
       className={
-        "h-[120vh] px-4 xl:px-0 w-full max-w-7xl mx-auto  py-20  space-y-6 "
+        "md:h-[120vh] h-full px-4 xl:px-0 w-full max-w-7xl mx-auto  py-20  space-y-6 "
       }
+      id="about"
     >
-      <div className="flex items-center justify-between w-full border-b border-foreground/60 pb-4 ">
-        <Reaveal>
-          <h1 className="2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-black text-stroke uppercase">
-            About Me
-          </h1>
-        </Reaveal>
-        <CornerRightDown strokeWidth={1} size={40} />
-      </div>
+      <Head>About Me</Head>
       <div
         className={cn(
           inter.className,
@@ -175,7 +170,7 @@ const About = () => {
           onMouseEnter={() => setHovered(true)}
           onMouseLeave={() => setHovered(false)}
         >
-          <div className="w-28 h-28 z-10 rounded-full overflow-hidden">
+          <div className="w-28 h-28 z-[1] rounded-full overflow-hidden">
             <Image
               src="/images/final.png"
               alt="me"

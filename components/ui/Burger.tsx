@@ -27,10 +27,10 @@ const AnimatedBurger = () => {
   };
 
   return (
-    <div className="">
+    <div className="z-50">
       {/* Burger button */}
       <button
-        className="relative w-12 z-20 h-12 flex flex-col items-center justify-center gap-2"
+        className="relative w-12 z-50 h-12 flex flex-col items-center justify-center gap-2"
         onClick={() => setIsOpen(!isOpen)}
       >
         {/* Line 1 */}
@@ -75,7 +75,7 @@ const AnimatedBurger = () => {
             }}
             className="absolute px-10 pb-24 md:pb-10 top-0 right-0 bg-foreground flex items-end justify-between w-full h-screen z-10"
           >
-            <div className=" z-20  ">
+            <div className=" z-50  ">
               {navlinks.map((nav, i) => (
                 <motion.div
                   key={i}

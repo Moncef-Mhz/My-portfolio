@@ -4,9 +4,9 @@ import Image from "next/image";
 import { motion, useAnimation, useInView } from "motion/react";
 import { useEffect, useRef } from "react";
 import Reaveal from "../ui/Reaveal";
-import { CornerRightDown } from "lucide-react";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
+import Head from "../ui/Head";
 
 const Jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -30,17 +30,10 @@ const Works = () => {
       ref={ref}
       id="projects"
       className={
-        "w-full h-full bg-background xl:px-0 py-10  px-4 max-w-7xl items-center mx-auto space-y-6"
+        "w-full h-full bg-background xl:px-0 pt-20 pb-10  px-4 max-w-7xl items-center mx-auto space-y-6"
       }
     >
-      <div className="flex items-center justify-between w-full border-b pb-4 ">
-        <Reaveal>
-          <h1 className="2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl text-2xl font-black text-stroke uppercase">
-            Projects
-          </h1>
-        </Reaveal>
-        <CornerRightDown strokeWidth={1} size={40} />
-      </div>
+      <Head>Projects</Head>
       <div
         className={cn(
           Jakarta.className,
