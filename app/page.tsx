@@ -16,6 +16,19 @@ const HomePage = () => {
       <InfiniteSkills items={Skills} className="" />
       <Works />
       <About />
+      <h1>dsa</h1>
+      <h1>dsa</h1>
+      <h1>dsa</h1>
+      <h1>dsa</h1>
+      <h1>dsa</h1>
+      <h1>dsa</h1>
+      <h1>dsa</h1>
+      <h1>dsa</h1>
+      <h1>dsa</h1>
+      <h1>dsa</h1>
+      <h1>dsa</h1>
+      <h1>dsa</h1>
+      <h1>dsa</h1>
     </main>
   );
 };

@@ -7,13 +7,51 @@ import Reaveal from "../ui/Reaveal";
 import Button from "../ui/Button";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
-// import { motion } from "motion/react";
+import { useState } from "react";
 
 const inter = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400", "500", "600", "700", "800"],
 });
+
+const skill = [
+  {
+    id: 1,
+    name: "React",
+    logo: "/icons/react.svg",
+    top: "45%",
+    left: "20%",
+  },
+  {
+    id: 2,
+    name: "Figma",
+    logo: "/icons/figma.svg",
+    top: "15%",
+    left: "50%",
+  },
+  {
+    id: 3,
+    name: "Tailwind CSS",
+    logo: "/icons/tailwind1.svg",
+    top: "85%",
+    left: "30%",
+  },
+  {
+    id: 4,
+    name: "Prisma",
+    logo: "/icons/prisma.svg",
+    top: "85%",
+    left: "70%",
+  },
+  {
+    id: 5,
+    name: "node",
+    logo: "/icons/node3.svg",
+    top: "45%",
+    left: "80%",
+  },
+];
 
 const info = [
   {
@@ -77,6 +115,8 @@ const Stack = [
 ];
 
 const About = () => {
+  const [hovered, setHovered] = useState(false);
+
   const roundoutline = (
     <>
       <div className="w-[100px] h-[100px] absolute  rounded-full border-indigo-500/5 border " />
@@ -90,7 +130,7 @@ const About = () => {
   return (
     <div
       className={
-        "h-[120vh] px-4 xl:px-0 w-full max-w-7xl mx-auto py-10 m  space-y-6 "
+        "h-[120vh] px-4 xl:px-0 w-full max-w-7xl mx-auto  py-20  space-y-6 "
       }
     >
       <div className="flex items-center justify-between w-full border-b border-foreground/60 pb-4 ">
@@ -112,7 +152,7 @@ const About = () => {
             key={item.title}
             className="bg-zinc-800 min-h-[300px] overflow-hidden group w-full h-full col-span-1 rounded-xl flex items-center justify-center relative"
           >
-            <h1 className="text-8xl z-[1] group-hover:to-zinc-600 duration-150 font-bold bg-gradient-to-b from-foreground inline-block text-transparent bg-clip-text to-zinc-900 ">
+            <h1 className="text-8xl flex items-center justify-center  z-[1] group-hover:to-zinc-600 duration-150 font-bold bg-gradient-to-b from-foreground  text-transparent bg-clip-text to-zinc-900 ">
               <Counter num={item.num} duration="1" />
               <span className="text-indigo-500 font-normal">+</span>
             </h1>
@@ -130,8 +170,12 @@ const About = () => {
             {roundoutline}
           </div>
         ))}
-        <div className="bg-zinc-800  w-full h-full min-h-[300px] col-span-1 group rounded-xl overflow-hidden relative flex items-center justify-center">
-          <div className="w-28 h-28  rounded-full overflow-hidden">
+        <div
+          className="bg-zinc-800 w-full h-full min-h-[300px] col-span-1 group rounded-xl overflow-hidden relative flex items-center justify-center"
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+        >
+          <div className="w-28 h-28 z-10 rounded-full overflow-hidden">
             <Image
               src="/images/final.png"
               alt="me"
@@ -141,6 +185,27 @@ const About = () => {
               className="w-full h-full grayscale group-hover:scale-105 group-hover:grayscale-0 duration-150"
             />
           </div>
+          {skill.map((item) => (
+            <div
+              key={item.id}
+              className={`w-16 h-16 flex items-center justify-center bg-white rounded-full absolute transition-all duration-300 ${
+                hovered ? "opacity-100" : "opacity-0"
+              }`}
+              style={{
+                top: hovered ? item.top : "50%",
+                left: hovered ? item.left : "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            >
+              <Image
+                src={item.logo}
+                alt={item.name}
+                width={400}
+                height={400}
+                className="object-cover w-10 h-10"
+              />
+            </div>
+          ))}
           {roundoutline}
         </div>
         <div className="bg-zinc-800 py-8 px-6 flex flex-col gap-y-4 w-full h-full col-span-1 sm:col-span-2 md:col-span-2 row-span-2 rounded-xl relative">
