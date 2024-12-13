@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
     "@studio-freight/lenis": "^1.0.42",
     "clsx": "^2.1.1",
     "lenis": "^1.1.17",
@@ -18,7 +19,9 @@
     "next": "15.0.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-dom": "19.0.0-rc-66855b96-20241106",
-    "tailwind-merge": "^2.5.5"
+    "react-hook-form": "^7.54.1",
+    "tailwind-merge": "^2.5.5",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@types/node": "^20",

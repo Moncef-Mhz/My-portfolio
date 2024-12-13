@@ -1,4 +1,4 @@
-import { Dribbble, Instagram, Linkedin } from "lucide-react";
+import { Dribbble, Github, Instagram, Linkedin } from "lucide-react";
 
 export const navlinks = [
   {
@@ -34,6 +34,11 @@ export const socialLinks = [
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/moncef-meharzi-1aba92211/",
     icon: <Linkedin strokeWidth={1} />,
+  },
+  {
+    name: "Github",
+    href: "https://github.com/Moncef-Mhz",
+    icon: <Github strokeWidth={1} />,
   },
 ];
 
